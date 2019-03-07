@@ -15,11 +15,9 @@ E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\MQTools\obj\Debug\Rabbi
 E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\MQTools\obj\Debug\Rabbit.MQTools.csproj.GenerateResource.Cache
 E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\MQTools\obj\Debug\Rabbit.MQTools.exe
 E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\MQTools\obj\Debug\Rabbit.MQTools.pdb
-E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\Rabbit.MQTools.exe.config
-E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.exe
-E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.pdb
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\MQ\MQ.db
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\skin\0.ssk
+E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\Rabbit.MQTools.exe.config
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\Rabbit.MQTools.exe
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\Rabbit.MQTools.pdb
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\DB.SqlLiteHelper.dll
@@ -27,7 +25,10 @@ E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\Iris
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\RabbitMQ.Client.dll
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\System.Data.SQLite.dll
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\bin\Debug\DB.SqlLiteHelper.pdb
+E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.csprojResolveAssemblyReference.cache
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.AddForm.resources
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.main.resources
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.Properties.Resources.resources
 E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.csproj.GenerateResource.Cache
+E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.exe
+E:\0.项目\1\0.自己研究\14.RabbitMQ\RabbitMQ\MQTools\MQTools\obj\Debug\Rabbit.MQTools.pdb

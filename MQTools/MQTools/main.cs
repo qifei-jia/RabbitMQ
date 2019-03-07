@@ -137,7 +137,7 @@ namespace Rabbit.MQTools
             model.Port = txt_port.Text;
             model.ToPic = txt_topic.Text;
             model.content = txt_sendcontent.Text;
-            txt_send.Text = rabbit.send(model) + "\r\n" + txt_send.Text;
+            txt_send.Text = "==" + DateTime.Now.ToString("HH:mm:ss") + "==" + rabbit.send(model) + "\r\n" + txt_send.Text + "\r\n";
         }
         /// <summary>
         /// 消费MQ
@@ -187,20 +187,20 @@ namespace Rabbit.MQTools
                         int i = 0;
                         //while (true)
                         //{
-                            //阻塞函数，获取队列中的消息
-                            BasicDeliverEventArgs ea = (BasicDeliverEventArgs)consumer.Queue.Dequeue();
-                            byte[] bytes = ea.Body;
-                            string str = Encoding.UTF8.GetString(bytes);
-                            txt_consume.Text = string.Format("[{0}]--{1}", i++, str) + "\r\n" + txt_consume.Text;
-                            //回复确认
-                            channel.BasicAck(ea.DeliveryTag, false);
+                        //阻塞函数，获取队列中的消息
+                        BasicDeliverEventArgs ea = (BasicDeliverEventArgs)consumer.Queue.Dequeue();
+                        byte[] bytes = ea.Body;
+                        string str = Encoding.UTF8.GetString(bytes);
+                        txt_consume.Text = string.Format("[{0}]--{1}", i++, str) + "\r\n" + txt_consume.Text + "\r\n";
+                        //回复确认
+                        channel.BasicAck(ea.DeliveryTag, false);
                         //}
                     }
                 }
             }
             catch (Exception e1)
             {
-                txt_consume.Text+=(e1.Message);
+                txt_consume.Text += (e1.Message);
             }
         }
 
