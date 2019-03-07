@@ -1,0 +1,6 @@
+E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\DB.SqlLiteHelper\bin\Debug\DB.SqlLiteHelper.dll.config
+E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\DB.SqlLiteHelper\bin\Debug\DB.SqlLiteHelper.dll
+E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\DB.SqlLiteHelper\bin\Debug\DB.SqlLiteHelper.pdb
+E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\DB.SqlLiteHelper\bin\Debug\System.Data.SQLite.dll
+E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\DB.SqlLiteHelper\obj\Debug\DB.SqlLiteHelper.dll
+E:\0.项目\1\0.自己研究\14.RabbitMQ\MQTools\MQTools\DB.SqlLiteHelper\obj\Debug\DB.SqlLiteHelper.pdb
