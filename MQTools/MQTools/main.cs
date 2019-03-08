@@ -136,8 +136,37 @@ namespace Rabbit.MQTools
             model.IP = txt_ip.Text;
             model.Port = txt_port.Text;
             model.ToPic = txt_topic.Text;
-            model.content = txt_sendcontent.Text;
-            txt_send.Text = "==" + DateTime.Now.ToString("HH:mm:ss") + "==" + rabbit.send(model) + "\r\n" + txt_send.Text + "\r\n";
+            model.content = replactStr(txt_sendcontent.Text);
+            txt_send.Text = "\r\n ==" + DateTime.Now.ToString("HH:mm:ss") + "==" + rabbit.send(model) + "\r\n" + txt_send.Text + "\r\n";
+        }
+        /// <summary>
+        /// 随机数处理
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string replactStr(string str)
+        {
+            if (chb_guid.Checked)
+            {
+                str = str.Replace(txt_guid.Text.Trim(), Guid.NewGuid().ToString());
+            }
+            if (chb_random.Checked)
+            {
+                str = str.Replace(txt_random.Text.Trim(), new Random().Next(10000000).ToString());
+            }
+            if (chb_param1.Checked)
+            {
+                str = str.Replace(txt_param11.Text.Trim(), txt_param111.Text.Trim());
+            }
+            if (chb_param2.Checked)
+            {
+                str = str.Replace(txt_param22.Text.Trim(), txt_param222.Text.Trim());
+            }
+            if (chb_param3.Checked)
+            {
+                str = str.Replace(txt_param33.Text.Trim(), txt_param333.Text.Trim());
+            }
+            return str;
         }
         /// <summary>
         /// 消费MQ
