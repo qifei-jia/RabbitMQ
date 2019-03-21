@@ -7,6 +7,7 @@ using System.Data.My.SQLite;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Rabbit.MQTools
@@ -28,7 +29,8 @@ namespace Rabbit.MQTools
         {
             GetSkin("0.ssk");     //换肤,0.ssk是皮肤文件
             BindTopic();
-            txt_send.Text = "[-1] 发送数据，请填写发送内容！\r\n[-2] 消费数据目前是手动触发消费，每次一条数据！\n";
+            txt_send.Text = "[-1] 发送数据，请填写发送内容！\r\n";
+            //[-2] 消费数据目前是手动触发消费，每次一条数据！\n
         }
         private Sunisoft.IrisSkin.SkinEngine skin = new Sunisoft.IrisSkin.SkinEngine();
         private void GetSkin(string skinName)
@@ -168,6 +170,7 @@ namespace Rabbit.MQTools
             }
             return str;
         }
+        Thread thread;
         /// <summary>
         /// 消费MQ
         /// </summary>
@@ -176,6 +179,15 @@ namespace Rabbit.MQTools
         private void btnConsume_Click(object sender, EventArgs e)
         {
             tabControl.SelectedIndex = 1;
+
+            ThreadStart threadStart = new ThreadStart(Calculate);
+            thread = new Thread(threadStart);
+            thread.Start();
+
+        }
+        delegate void changeText(string result);
+        public void Calculate()
+        {
             mqModel model = new mqModel();
             model.userName = txt_username.Text;
             model.pwd = txt_pwd.Text;
@@ -183,6 +195,39 @@ namespace Rabbit.MQTools
             model.Port = txt_port.Text;
             model.ToPic = txt_topic.Text;
             consume(model);
+        }
+        public void CalcFinished(string result)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new changeText(CalcFinished), result);
+            }
+            else
+            {
+                this.txt_consume.Text = result.ToString();
+            }
+        }
+        public void CalcFinishedLog(string result)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new changeText(CalcFinishedLog), result);
+            }
+            else
+            {
+                this.txt_send.Text = "\r\n ==" + DateTime.Now.ToString("HH:mm:ss") + "[MQ消费数据]==" + result+ "\r\n" + txt_send.Text + "\r\n";
+            }
+        }
+        public void CalcFinishedEx(string result)
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new changeText(CalcFinishedEx), result);
+            }
+            else
+            {
+                this.txt_consume.Text = result.ToString();
+            }
         }
         /// <summary>
         /// MQ消费
@@ -214,22 +259,24 @@ namespace Rabbit.MQTools
                         //消费队列，并设置应答模式为程序主动应答
                         channel.BasicConsume(model.ToPic, false, consumer);
                         int i = 0;
-                        //while (true)
-                        //{
-                        //阻塞函数，获取队列中的消息
-                        BasicDeliverEventArgs ea = (BasicDeliverEventArgs)consumer.Queue.Dequeue();
-                        byte[] bytes = ea.Body;
-                        string str = Encoding.UTF8.GetString(bytes);
-                        txt_consume.Text = string.Format("[{0}]--{1}", i++, str) + "\r\n" + txt_consume.Text + "\r\n";
-                        //回复确认
-                        channel.BasicAck(ea.DeliveryTag, false);
-                        //}
+                        while (true)
+                        {
+                            //阻塞函数，获取队列中的消息
+                            BasicDeliverEventArgs ea = (BasicDeliverEventArgs)consumer.Queue.Dequeue();
+                            byte[] bytes = ea.Body;
+                            string str = Encoding.UTF8.GetString(bytes);
+                            string result = string.Format("[{0}]--{1}", i++, str) + "\r\n" + txt_consume.Text + "\r\n";
+                            CalcFinishedLog(string.Format("[{0}]--{1}", i++, str));
+                            CalcFinished(result);
+                            //回复确认
+                            channel.BasicAck(ea.DeliveryTag, false);
+                        }
                     }
                 }
             }
             catch (Exception e1)
             {
-                txt_consume.Text += (e1.Message);
+                CalcFinishedEx(e1.Message);
             }
         }
 
@@ -246,5 +293,10 @@ namespace Rabbit.MQTools
             main_Load(null, null);
         }
         #endregion
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            thread.Abort();
+        }
     }
 }

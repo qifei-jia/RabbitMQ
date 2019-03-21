@@ -35,6 +35,12 @@
             this.参数设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_t = new System.Windows.Forms.Label();
+            this.chb_guid = new System.Windows.Forms.CheckBox();
+            this.txt_random = new System.Windows.Forms.TextBox();
+            this.chb_random = new System.Windows.Forms.CheckBox();
+            this.txt_guid = new System.Windows.Forms.TextBox();
             this.btnConsume = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.txt_topic = new System.Windows.Forms.TextBox();
@@ -55,28 +61,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage_consume = new System.Windows.Forms.TabPage();
             this.txt_consume = new System.Windows.Forms.TextBox();
-            this.chb_guid = new System.Windows.Forms.CheckBox();
-            this.chb_random = new System.Windows.Forms.CheckBox();
-            this.txt_guid = new System.Windows.Forms.TextBox();
-            this.txt_random = new System.Windows.Forms.TextBox();
-            this.lbl_t = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabpage_s = new System.Windows.Forms.TabPage();
-            this.txt_param11 = new System.Windows.Forms.TextBox();
-            this.chb_param1 = new System.Windows.Forms.CheckBox();
+            this.txt_param333 = new System.Windows.Forms.TextBox();
+            this.txt_param33 = new System.Windows.Forms.TextBox();
+            this.txt_param222 = new System.Windows.Forms.TextBox();
+            this.txt_param22 = new System.Windows.Forms.TextBox();
+            this.chb_param3 = new System.Windows.Forms.CheckBox();
             this.txt_param111 = new System.Windows.Forms.TextBox();
             this.chb_param2 = new System.Windows.Forms.CheckBox();
-            this.txt_param22 = new System.Windows.Forms.TextBox();
-            this.txt_param222 = new System.Windows.Forms.TextBox();
-            this.chb_param3 = new System.Windows.Forms.CheckBox();
-            this.txt_param33 = new System.Windows.Forms.TextBox();
-            this.txt_param333 = new System.Windows.Forms.TextBox();
+            this.txt_param11 = new System.Windows.Forms.TextBox();
+            this.chb_param1 = new System.Windows.Forms.CheckBox();
+            this.btnStop = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabpage_send.SuspendLayout();
             this.tabPage_consume.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.tabpage_s.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,6 +127,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.btnStop);
             this.groupBox1.Controls.Add(this.btnConsume);
             this.groupBox1.Controls.Add(this.btnSend);
             this.groupBox1.Controls.Add(this.txt_topic);
@@ -145,12 +147,73 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "服务器信息";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbl_t);
+            this.groupBox2.Controls.Add(this.chb_guid);
+            this.groupBox2.Controls.Add(this.txt_random);
+            this.groupBox2.Controls.Add(this.chb_random);
+            this.groupBox2.Controls.Add(this.txt_guid);
+            this.groupBox2.Location = new System.Drawing.Point(449, 77);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(219, 86);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "随机数配置";
+            // 
+            // lbl_t
+            // 
+            this.lbl_t.AutoSize = true;
+            this.lbl_t.Font = new System.Drawing.Font("宋体", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_t.ForeColor = System.Drawing.Color.Red;
+            this.lbl_t.Location = new System.Drawing.Point(6, 72);
+            this.lbl_t.Name = "lbl_t";
+            this.lbl_t.Size = new System.Drawing.Size(117, 11);
+            this.lbl_t.TabIndex = 5;
+            this.lbl_t.Text = "- - 变量替换发送内容";
+            // 
+            // chb_guid
+            // 
+            this.chb_guid.AutoSize = true;
+            this.chb_guid.Location = new System.Drawing.Point(6, 20);
+            this.chb_guid.Name = "chb_guid";
+            this.chb_guid.Size = new System.Drawing.Size(96, 16);
+            this.chb_guid.TabIndex = 3;
+            this.chb_guid.Text = "是否使用guid";
+            this.chb_guid.UseVisualStyleBackColor = true;
+            // 
+            // txt_random
+            // 
+            this.txt_random.Location = new System.Drawing.Point(112, 40);
+            this.txt_random.Name = "txt_random";
+            this.txt_random.Size = new System.Drawing.Size(100, 21);
+            this.txt_random.TabIndex = 4;
+            this.txt_random.Text = "#random#";
+            // 
+            // chb_random
+            // 
+            this.chb_random.AutoSize = true;
+            this.chb_random.Location = new System.Drawing.Point(6, 45);
+            this.chb_random.Name = "chb_random";
+            this.chb_random.Size = new System.Drawing.Size(108, 16);
+            this.chb_random.TabIndex = 3;
+            this.chb_random.Text = "是否使用随机数";
+            this.chb_random.UseVisualStyleBackColor = true;
+            // 
+            // txt_guid
+            // 
+            this.txt_guid.Location = new System.Drawing.Point(112, 14);
+            this.txt_guid.Name = "txt_guid";
+            this.txt_guid.Size = new System.Drawing.Size(100, 21);
+            this.txt_guid.TabIndex = 4;
+            this.txt_guid.Text = "#guid#";
+            // 
             // btnConsume
             // 
             this.btnConsume.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsume.Location = new System.Drawing.Point(582, 19);
+            this.btnConsume.Location = new System.Drawing.Point(538, 19);
             this.btnConsume.Name = "btnConsume";
-            this.btnConsume.Size = new System.Drawing.Size(75, 41);
+            this.btnConsume.Size = new System.Drawing.Size(62, 41);
             this.btnConsume.TabIndex = 2;
             this.btnConsume.Text = "消费数据";
             this.btnConsume.UseVisualStyleBackColor = true;
@@ -159,7 +222,7 @@
             // btnSend
             // 
             this.btnSend.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSend.Location = new System.Drawing.Point(468, 19);
+            this.btnSend.Location = new System.Drawing.Point(450, 19);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 41);
             this.btnSend.TabIndex = 2;
@@ -328,67 +391,6 @@
             this.txt_consume.Size = new System.Drawing.Size(659, 396);
             this.txt_consume.TabIndex = 1;
             // 
-            // chb_guid
-            // 
-            this.chb_guid.AutoSize = true;
-            this.chb_guid.Location = new System.Drawing.Point(6, 20);
-            this.chb_guid.Name = "chb_guid";
-            this.chb_guid.Size = new System.Drawing.Size(96, 16);
-            this.chb_guid.TabIndex = 3;
-            this.chb_guid.Text = "是否使用guid";
-            this.chb_guid.UseVisualStyleBackColor = true;
-            // 
-            // chb_random
-            // 
-            this.chb_random.AutoSize = true;
-            this.chb_random.Location = new System.Drawing.Point(6, 45);
-            this.chb_random.Name = "chb_random";
-            this.chb_random.Size = new System.Drawing.Size(108, 16);
-            this.chb_random.TabIndex = 3;
-            this.chb_random.Text = "是否使用随机数";
-            this.chb_random.UseVisualStyleBackColor = true;
-            // 
-            // txt_guid
-            // 
-            this.txt_guid.Location = new System.Drawing.Point(112, 14);
-            this.txt_guid.Name = "txt_guid";
-            this.txt_guid.Size = new System.Drawing.Size(100, 21);
-            this.txt_guid.TabIndex = 4;
-            this.txt_guid.Text = "#guid#";
-            // 
-            // txt_random
-            // 
-            this.txt_random.Location = new System.Drawing.Point(112, 40);
-            this.txt_random.Name = "txt_random";
-            this.txt_random.Size = new System.Drawing.Size(100, 21);
-            this.txt_random.TabIndex = 4;
-            this.txt_random.Text = "#random#";
-            // 
-            // lbl_t
-            // 
-            this.lbl_t.AutoSize = true;
-            this.lbl_t.Font = new System.Drawing.Font("宋体", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_t.ForeColor = System.Drawing.Color.Red;
-            this.lbl_t.Location = new System.Drawing.Point(6, 72);
-            this.lbl_t.Name = "lbl_t";
-            this.lbl_t.Size = new System.Drawing.Size(117, 11);
-            this.lbl_t.TabIndex = 5;
-            this.lbl_t.Text = "- - 变量替换发送内容";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lbl_t);
-            this.groupBox2.Controls.Add(this.chb_guid);
-            this.groupBox2.Controls.Add(this.txt_random);
-            this.groupBox2.Controls.Add(this.chb_random);
-            this.groupBox2.Controls.Add(this.txt_guid);
-            this.groupBox2.Location = new System.Drawing.Point(449, 77);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(219, 86);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "随机数配置";
-            // 
             // tabpage_s
             // 
             this.tabpage_s.Controls.Add(this.txt_param333);
@@ -408,23 +410,45 @@
             this.tabpage_s.Text = "全局变量设置";
             this.tabpage_s.UseVisualStyleBackColor = true;
             // 
-            // txt_param11
+            // txt_param333
             // 
-            this.txt_param11.Location = new System.Drawing.Point(108, 21);
-            this.txt_param11.Name = "txt_param11";
-            this.txt_param11.Size = new System.Drawing.Size(100, 21);
-            this.txt_param11.TabIndex = 4;
-            this.txt_param11.Text = "#p1#";
+            this.txt_param333.Location = new System.Drawing.Point(221, 95);
+            this.txt_param333.Name = "txt_param333";
+            this.txt_param333.Size = new System.Drawing.Size(150, 21);
+            this.txt_param333.TabIndex = 4;
             // 
-            // chb_param1
+            // txt_param33
             // 
-            this.chb_param1.AutoSize = true;
-            this.chb_param1.Location = new System.Drawing.Point(16, 26);
-            this.chb_param1.Name = "chb_param1";
-            this.chb_param1.Size = new System.Drawing.Size(72, 16);
-            this.chb_param1.TabIndex = 3;
-            this.chb_param1.Text = "是否启用";
-            this.chb_param1.UseVisualStyleBackColor = true;
+            this.txt_param33.Location = new System.Drawing.Point(108, 95);
+            this.txt_param33.Name = "txt_param33";
+            this.txt_param33.Size = new System.Drawing.Size(100, 21);
+            this.txt_param33.TabIndex = 4;
+            this.txt_param33.Text = "#p3#";
+            // 
+            // txt_param222
+            // 
+            this.txt_param222.Location = new System.Drawing.Point(221, 59);
+            this.txt_param222.Name = "txt_param222";
+            this.txt_param222.Size = new System.Drawing.Size(150, 21);
+            this.txt_param222.TabIndex = 4;
+            // 
+            // txt_param22
+            // 
+            this.txt_param22.Location = new System.Drawing.Point(108, 59);
+            this.txt_param22.Name = "txt_param22";
+            this.txt_param22.Size = new System.Drawing.Size(100, 21);
+            this.txt_param22.TabIndex = 4;
+            this.txt_param22.Text = "#p2#";
+            // 
+            // chb_param3
+            // 
+            this.chb_param3.AutoSize = true;
+            this.chb_param3.Location = new System.Drawing.Point(16, 100);
+            this.chb_param3.Name = "chb_param3";
+            this.chb_param3.Size = new System.Drawing.Size(72, 16);
+            this.chb_param3.TabIndex = 3;
+            this.chb_param3.Text = "是否启用";
+            this.chb_param3.UseVisualStyleBackColor = true;
             // 
             // txt_param111
             // 
@@ -443,45 +467,34 @@
             this.chb_param2.Text = "是否启用";
             this.chb_param2.UseVisualStyleBackColor = true;
             // 
-            // txt_param22
+            // txt_param11
             // 
-            this.txt_param22.Location = new System.Drawing.Point(108, 59);
-            this.txt_param22.Name = "txt_param22";
-            this.txt_param22.Size = new System.Drawing.Size(100, 21);
-            this.txt_param22.TabIndex = 4;
-            this.txt_param22.Text = "#p2#";
+            this.txt_param11.Location = new System.Drawing.Point(108, 21);
+            this.txt_param11.Name = "txt_param11";
+            this.txt_param11.Size = new System.Drawing.Size(100, 21);
+            this.txt_param11.TabIndex = 4;
+            this.txt_param11.Text = "#p1#";
             // 
-            // txt_param222
+            // chb_param1
             // 
-            this.txt_param222.Location = new System.Drawing.Point(221, 59);
-            this.txt_param222.Name = "txt_param222";
-            this.txt_param222.Size = new System.Drawing.Size(150, 21);
-            this.txt_param222.TabIndex = 4;
+            this.chb_param1.AutoSize = true;
+            this.chb_param1.Location = new System.Drawing.Point(16, 26);
+            this.chb_param1.Name = "chb_param1";
+            this.chb_param1.Size = new System.Drawing.Size(72, 16);
+            this.chb_param1.TabIndex = 3;
+            this.chb_param1.Text = "是否启用";
+            this.chb_param1.UseVisualStyleBackColor = true;
             // 
-            // chb_param3
+            // btnStop
             // 
-            this.chb_param3.AutoSize = true;
-            this.chb_param3.Location = new System.Drawing.Point(16, 100);
-            this.chb_param3.Name = "chb_param3";
-            this.chb_param3.Size = new System.Drawing.Size(72, 16);
-            this.chb_param3.TabIndex = 3;
-            this.chb_param3.Text = "是否启用";
-            this.chb_param3.UseVisualStyleBackColor = true;
-            // 
-            // txt_param33
-            // 
-            this.txt_param33.Location = new System.Drawing.Point(108, 95);
-            this.txt_param33.Name = "txt_param33";
-            this.txt_param33.Size = new System.Drawing.Size(100, 21);
-            this.txt_param33.TabIndex = 4;
-            this.txt_param33.Text = "#p3#";
-            // 
-            // txt_param333
-            // 
-            this.txt_param333.Location = new System.Drawing.Point(221, 95);
-            this.txt_param333.Name = "txt_param333";
-            this.txt_param333.Size = new System.Drawing.Size(150, 21);
-            this.txt_param333.TabIndex = 4;
+            this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStop.Location = new System.Drawing.Point(607, 19);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(62, 41);
+            this.btnStop.TabIndex = 2;
+            this.btnStop.Text = "停止消费";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // main
             // 
@@ -504,13 +517,13 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabpage_send.ResumeLayout(false);
             this.tabpage_send.PerformLayout();
             this.tabPage_consume.ResumeLayout(false);
             this.tabPage_consume.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.tabpage_s.ResumeLayout(false);
             this.tabpage_s.PerformLayout();
             this.ResumeLayout(false);
@@ -562,5 +575,6 @@
         private System.Windows.Forms.TextBox txt_param22;
         private System.Windows.Forms.CheckBox chb_param3;
         private System.Windows.Forms.CheckBox chb_param2;
+        private System.Windows.Forms.Button btnStop;
     }
 }
